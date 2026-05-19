@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Braindance - Capabilities & Process</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --pink: #F5A3D8;
+            --orange: #FF5722;
+            --purple: #4B3FA0;
+            --cream: #F5F1E8;
+            --dark: #1a1a1a;
+            --light-gray: #f0f0f0;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: var(--dark);
+            color: #fff;
+            line-height: 1.6;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Header & Hero */
+        header {
+            background: var(--dark);
+            padding: 60px 20px;
+            text-align: center;
+            border-bottom: 3px solid var(--orange);
+        }
+
+        header h1 {
+            font-size: 4.5rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+            color: var(--orange);
+        }
+
+        header p {
+            font-size: 1.3rem;
+            color: var(--cream);
+            max-width: 800px;
+            margin: 0 auto;
+            font-weight: 500;
+        }
+
+        /* Navigation */
+        nav {
+            background: var(--dark);
+            padding: 20px;
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            flex-wrap: wrap;
+            border-bottom: 2px solid var(--purple);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: color 0.2s ease;
+            position: relative;
+        }
+
+        nav a:hover {
+            color: var(--pink);
+        }
+
+        /* Sections */
+        section {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        section h2 {
+            font-size: 3.2rem;
+            margin-bottom: 40px;
+            color: var(--pink);
+            font-weight: 700;
+        }
+
+        section h3 {
+            font-size: 1.5rem;
+            margin: 30px 0 15px 0;
+            color: var(--orange);
+            font-weight: 600;
+        }
+
+        section p {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: #ccc;
+            margin-bottom: 20px;
+            font-weight: 400;
+        }
+
+        /* Hero Overview */
+        #overview {
+            background: var(--purple);
+            padding: 100px 20px;
+        }
+
+        .overview-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .overview-content h2 {
+            font-size: 3rem;
+            color: var(--cream);
+            margin-bottom: 30px;
+        }
+
+        .overview-highlight {
+            background: var(--orange);
+            color: var(--dark);
+            padding: 40px;
+            border-radius: 8px;
+            margin: 30px 0;
+            font-size: 1.2rem;
+            line-height: 1.9;
+            font-weight: 500;
+        }
+
+        .dual-voice-badge {
+            display: inline-block;
+            background: var(--pink);
+            color: var(--dark);
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            margin: 20px 0;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        /* Process Section */
+        #process {
+            background: var(--dark);
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .process-card {
+            background: #242424;
+            padding: 40px;
+            border-radius: 8px;
+            border-left: 5px solid var(--orange);
+            transition: all 0.2s ease;
+            position: relative;
+        }
+
+        .process-card:hover {
+            transform: translateY(-5px);
+            border-left-color: var(--pink);
+        }
+
+        .process-number {
+            font-size: 2.5rem;
+            color: var(--orange);
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .process-card h3 {
+            color: var(--pink);
+            margin-top: 0;
+            font-weight: 600;
+        }
+
+        .process-card p {
+            color: #aaa;
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+
+        /* Pricing Section */
+        #pricing {
+            background: var(--cream);
+            color: var(--dark);
+        }
+
+        #pricing h2 {
+            color: var(--purple);
+        }
+
+        .pricing-card {
+            background: var(--dark);
+            color: #fff;
+            padding: 60px 40px;
+            border-radius: 8px;
+            max-width: 700px;
+            margin: 40px auto;
+            border: 3px solid var(--orange);
+        }
+
+        .price-tag {
+            font-size: 3rem;
+            color: var(--pink);
+            margin: 20px 0;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        .price-tag span {
+            font-size: 1.2rem;
+            color: var(--orange);
+        }
+
+        .included-list {
+            background: rgba(255, 87, 34, 0.15);
+            padding: 30px;
+            border-radius: 8px;
+            margin: 30px 0;
+            border-left: 4px solid var(--orange);
+        }
+
+        .included-list h4 {
+            color: var(--orange);
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .benefit-item {
+            display: flex;
+            gap: 15px;
+            margin: 15px 0;
+            color: #ddd;
+            font-size: 1rem;
+        }
+
+        .benefit-item::before {
+            content: '✓';
+            color: var(--pink);
+            font-size: 1.3rem;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .deliverable {
+            background: rgba(75, 63, 160, 0.15);
+            padding: 20px;
+            border-radius: 6px;
+            margin: 15px 0;
+            border-left: 3px solid var(--purple);
+            color: #ccc;
+        }
+
+        .deliverable strong {
+            color: var(--pink);
+        }
+
+        /* CTA Button */
+        .cta-button {
+            display: inline-block;
+            background: var(--orange);
+            color: #fff;
+            padding: 15px 40px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 1.1rem;
+            margin-top: 30px;
+            transition: all 0.2s ease;
+            border: none;
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+        }
+
+        .cta-button:hover {
+            box-shadow: 0 0 20px rgba(255, 87, 34, 0.6);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            border-top: 3px solid var(--orange);
+            padding: 40px 20px;
+            text-align: center;
+            color: #999;
+        }
+
+        footer p {
+            margin: 10px 0;
+            font-weight: 500;
+        }
+
+        /* Framework Section */
+        .framework-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .framework-item {
+            background: #242424;
+            padding: 30px;
+            border-radius: 8px;
+            border-left: 4px solid var(--orange);
+        }
+
+        .framework-item:nth-child(2) {
+            border-left-color: var(--purple);
+        }
+
+        .framework-item:nth-child(3) {
+            border-left-color: var(--pink);
+        }
+
+        .framework-item:nth-child(4) {
+            border-left-color: var(--orange);
+        }
+
+        .framework-item:nth-child(5) {
+            border-left-color: var(--purple);
+        }
+
+        .framework-item:nth-child(6) {
+            border-left-color: var(--pink);
+        }
+
+        .framework-item h3 {
+            font-size: 1.3rem;
+            margin-top: 0;
+        }
+
+        .framework-item p {
+            color: #aaa;
+            font-size: 0.95rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.8rem;
+            }
+
+            header p {
+                font-size: 1.05rem;
+            }
+
+            section h2 {
+                font-size: 2rem;
+            }
+
+            nav {
+                gap: 15px;
+            }
+
+            nav a {
+                font-size: 0.9rem;
+            }
+
+            .process-grid {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 60px 20px;
+            }
+
+            .overview-highlight {
+                font-size: 1rem;
+                padding: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <a href="#overview">Overview</a>
+        <a href="#process">Process</a>
+        <a href="#framework">Framework</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <!-- Header -->
+    <header>
+        <h1>BRAINDANCE</h1>
+        <p>Your product is ready. Your message isn't.</p>
+    </header>
+
+    <!-- Overview Section -->
+    <section id="overview">
+        <div class="overview-content">
+            <div class="dual-voice-badge">DUAL VOICE SYSTEM</div>
+            <h2>One Brand. Two Voices.</h2>
+            <div class="overview-highlight">
+                We switch cybersecurity founders to build a Dual Voice System. One brand. Two voices. One that earns technical trust. One that drives business decisions. Delivered in a week. Built to scale with you from launch to IPO.
+            </div>
+            <p style="margin-top: 40px; font-size: 1.15rem; color: var(--cream); font-weight: 500;">
+                Cybersecurity startups don't have a product problem. They have a language problem.
+            </p>
+            <p style="color: #999; max-width: 700px; margin: 20px auto; font-size: 1.05rem;">
+                Most cybersecurity companies write their messaging the same way they wrote their pitch deck. Product first. Features front and center. Technical proof stacked on technical proof. The problem is your buyer doesn't buy technology. They buy outcomes. When your message sounds like every other cybersecurity company they've talked to this month, the product stops mattering.
+            </p>
+            <button class="cta-button">Book a Discovery Call</button>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section id="process">
+        <h2>Our Process</h2>
+        <p style="font-size: 1.1rem; color: var(--cream); text-align: center; margin-bottom: 50px; font-weight: 500;">A 1-week sprint model designed to build your voice from the ground up.</p>
+
+        <div class="process-grid">
+            <div class="process-card">
+                <div class="process-number">01</div>
+                <h3>Kickoff</h3>
+                <p>Intros and ways of working. We align on timeline, team structure, and what success looks like for your Dual Voice System.</p>
+            </div>
+
+            <div class="process-card">
+                <div class="process-number">02</div>
+                <h3>Discovery Session</h3>
+                <p>We start by hearing your story. Not just what you've built but why you built it, the problem you exist to solve, and how you naturally talk about it. The best brand voices don't sound like marketing. They sound like the founder on their best day. This is where we find that voice.</p>
+            </div>
+
+            <div class="process-card">
+                <div class="process-number">03</div>
+                <h3>The Landscape</h3>
+                <p>Before we build your voice we need to understand the world it's walking into. Who your technical and non-technical buyers are, what they actually care about, and how your competitors are showing up in the market. We find the whitespace. That's where your voice lives.</p>
+            </div>
+
+            <div class="process-card">
+                <div class="process-number">04</div>
+                <h3>The Workshop</h3>
+                <p>This is where the Dual Voice System gets built. We work with you directly to develop one voice that works in both rooms. Technical buyers trust you. Non-technical buyers understand you. One brand. No compromise.</p>
+            </div>
+
+            <div class="process-card">
+                <div class="process-number">05</div>
+                <h3>Delivery</h3>
+                <p>You leave with your Dual Voice System in a living document that captures your voice, your messaging, and a SKILLS.md file your team or AI can use to sound like you every time. Built to scale with you from launch to IPO.</p>
+            </div>
+
+            <div class="process-card">
+                <div class="process-number">06</div>
+                <h3>Ongoing Support</h3>
+                <p>Your voice doesn't stop evolving when you launch. We provide guidance on how your messaging shifts across your website, pitch deck, LinkedIn, sales emails, and beyond—without losing what makes it uniquely yours.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Framework Section -->
+    <section id="framework">
+        <h2>The Five-Part Framework</h2>
+        <p style="text-align: center; font-size: 1.05rem; color: var(--cream); margin-bottom: 50px; font-weight: 500;">
+            What makes the Dual Voice System different. A comprehensive toolkit built specifically for cybersecurity founders with a dual audience problem.
+        </p>
+
+        <div class="framework-grid">
+            <div class="framework-item">
+                <h3 style="color: var(--pink);">North Star</h3>
+                <p>The single sentence that governs everything you say and why you say it. Your north star becomes the filter for every piece of messaging your company will ever create.</p>
+            </div>
+
+            <div class="framework-item">
+                <h3 style="color: var(--orange);">Dual Persona & Synthesis</h3>
+                <p>Two contrasting archetypes whose tension produces a voice that is uniquely yours. This duality allows you to speak authentically to both technical and non-technical buyers.</p>
+            </div>
+
+            <div class="framework-item">
+                <h3 style="color: var(--pink);">The Muse</h3>
+                <p>A named human who gives every writer a single editorial test before anything ships. Your Muse ensures consistency across every channel without stifling creativity.</p>
+            </div>
+
+            <div class="framework-item">
+                <h3 style="color: var(--orange);">Colorful Attributes</h3>
+                <p>Three specific, ownable traits that tell your team exactly how to sound in any situation. Not rules. Guidelines that give your voice room to breathe.</p>
+            </div>
+
+            <div class="framework-item">
+                <h3 style="color: var(--purple);">Persona Weights by Channel</h3>
+                <p>Precise guidance on how your voice shifts across your website, pitch deck, LinkedIn, and sales emails. Without losing what makes it yours. Context matters.</p>
+            </div>
+
+            <div class="framework-item">
+                <h3 style="color: var(--pink);">SKILLS.md File</h3>
+                <p>A machine-readable version of your voice. Your team and AI can use it to sound like you every time. Scale your voice without sacrificing authenticity.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing">
+        <h2>The Dual Voice System</h2>
+
+        <div class="pricing-card">
+            <h3 style="color: var(--pink); text-align: center; font-size: 1.5rem;">One Package. One Price. One Clear Outcome.</h3>
+
+            <div class="price-tag">
+                $18<span>k</span>
+            </div>
+
+            <p style="text-align: center; color: var(--cream); font-size: 1.05rem; margin-bottom: 30px; font-weight: 500;">
+                Delivered in one week. Built to scale with you from launch to IPO.
+            </p>
+
+            <div class="included-list">
+                <h4>What's Included</h4>
+                <div class="benefit-item">A five-part voice framework built specifically for cybersecurity startups with a dual audience problem</div>
+                <div class="benefit-item">North Star statement that governs everything you say</div>
+                <div class="benefit-item">Dual Persona and Synthesis archetypes for your unique voice</div>
+                <div class="benefit-item">The Muse—your editorial test for consistency</div>
+                <div class="benefit-item">Three Colorful Attributes that define your tone in any situation</div>
+                <div class="benefit-item">Persona Weights by Channel for strategic flexibility</div>
+                <div class="benefit-item">Living Notion document with your complete voice system</div>
+                <div class="benefit-item">SKILLS.md file for your team and AI</div>
+            </div>
+
+            <div class="deliverable">
+                <strong>You walk away with a voice your company can evolve with.</strong> Not a static guide. A living system that grows as your business grows. From seed to Series A. From Series A to IPO.
+            </div>
+
+            <div style="text-align: center;">
+                <button class="cta-button">Let's Build Your Voice</button>
+            </div>
+        </div>
+
+        <p style="text-align: center; color: var(--dark); margin-top: 50px; font-size: 1.05rem;">
+            Ready to switch how you talk about your product?<br>
+            <span style="color: var(--purple); font-weight: 600;">Every startup is using AI to write their copy. Most of them sound like it.</span>
+        </p>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" style="background: var(--purple); text-align: center;">
+        <h2 style="color: var(--orange);">Start Here</h2>
+        <p style="font-size: 1.15rem; color: var(--cream); margin: 30px 0; font-weight: 500;">
+            One conversation changes what you say in every room after it.
+        </p>
+        <p style="color: #aaa; margin-bottom: 30px;">
+            Book a discovery call. We'll identify exactly where your message is losing buyers and show you what the Dual Voice System would look like for your company.
+        </p>
+        <button class="cta-button">Book a Discovery Call</button>
+        <p style="margin-top: 50px; color: #999; font-size: 0.95rem;">
+            Email: hello@braindance.agency<br>
+            LinkedIn: Braindance Agency
+        </p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Braindance Agency. Building dual voices for cybersecurity founders.</p>
+        <p style="font-size: 0.9rem; margin-top: 20px; color: #666;">From launch to IPO. One voice. Two audiences. No compromise.</p>
+    </footer>
+</body>
+</html>
